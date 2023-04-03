@@ -9,16 +9,15 @@ const loadMoreButtonEl = document.querySelector('.load-more');
 const gallery = document.querySelector('.gallery');
 
 const searchPhotos = new SearchPhotos();
-const lightbox = new SimpleLightbox('.gallery .photo-alt', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
+const lightbox = new SimpleLightbox('.gallery a', {   captionsData: "alt",
+  captionDelay: 250, });
 let isLoading = false;
 
 let page = 1;
 const perPage = 40;
 
 searchFormEl.addEventListener('submit', handleSearchSubmit);
+
 loadMoreButtonEl.addEventListener('click', handleLoadMoreClick);
 window.addEventListener('scroll', handleInfiniteScroll);
 
